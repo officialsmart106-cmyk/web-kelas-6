@@ -1,0 +1,370 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 220px;
+    height: 100vh;
+
+    background: #111827;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 15px;
+
+    gap: 8px;
+
+    z-index: 1000;
+}
+
+.sidebar a {
+    color: #e5e7eb;
+    text-decoration: none;
+
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background: #1f2937;
+    color: white;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    margin-left: 220px;
+
+    padding: 40px;
+
+    max-width: 1400px;
+}
+
+section {
+    min-height: 100vh;
+
+    padding: 50px 0;
+
+    scroll-margin-top: 20px;
+}
+
+section h1 {
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+    color: #111827;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home h1 {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.home > p {
+    max-width: 700px;
+
+    line-height: 1.7;
+
+    color: #6b7280;
+
+    margin-bottom: 35px;
+}
+
+.home-info {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.info-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition: 0.2s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h2 {
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #6b7280;
+
+    margin-bottom: 15px;
+}
+
+.info-card a {
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   JADWAL
+========================= */
+
+.jadwal-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.jadwal-container > div {
+    background: white;
+
+    min-height: 180px;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition: 0.2s;
+}
+
+.jadwal-container > div:hover {
+    transform: translateY(-5px);
+}
+
+.jadwal-container h2 {
+    margin-bottom: 15px;
+
+    font-size: 22px;
+}
+
+.jadwal-container p {
+    line-height: 1.8;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   SISWA
+========================= */
+
+.siswa {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.siswa > div {
+    background: white;
+
+    padding: 25px;
+
+    min-height: 150px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    transition: 0.2s;
+}
+
+.siswa > div:hover {
+    transform: translateY(-5px);
+}
+
+.siswa h2 {
+    font-size: 18px;
+
+    line-height: 1.4;
+}
+
+.siswa button {
+    border: none;
+
+    background: #111827;
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.siswa button:hover {
+    background: #2563eb;
+}
+
+
+/* =========================
+   TUGAS & PENGUMUMAN
+========================= */
+
+.tugas-card,
+.pengumuman-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 180px;
+    }
+
+    .content {
+        margin-left: 180px;
+
+        padding: 30px;
+    }
+
+    .jadwal-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .siswa {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        position: static;
+
+        width: 100%;
+        height: auto;
+
+        flex-direction: row;
+
+        overflow-x: auto;
+
+        padding: 10px;
+
+        gap: 5px;
+    }
+
+    .sidebar a {
+        white-space: nowrap;
+
+        padding: 10px 12px;
+    }
+
+    .content {
+        margin-left: 0;
+
+        padding: 20px;
+    }
+
+    section {
+        min-height: auto;
+
+        padding: 60px 0;
+    }
+
+    .home h1 {
+        font-size: 30px;
+    }
+
+    section h1 {
+        font-size: 26px;
+    }
+
+    .home-info,
+    .jadwal-container,
+    .siswa {
+        grid-template-columns: 1fr;
+    }
+}
+
